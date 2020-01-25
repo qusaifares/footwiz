@@ -1,8 +1,66 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
+import Header from './Header.js';
+import Home from './Home.js';
+import League from './League.js';
+import { Link, Switch, Route } from 'react-router-dom';
 
-function App() {
-  return <></>;
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      leagueIds: ['4328', '4331', '4332', '4334', '4335'],
+      leaguesInfo: []
+    };
+  }
+  componentDidMount() {
+    this.state.leagueIds.forEach(id => {
+      fetch(
+        `https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=${id}`
+      )
+        .then(res => res.json())
+        .then(data =>
+          this.setState({
+            leaguesInfo: [...this.state.leaguesInfo, data.leagues[0]]
+          })
+        );
+    });
+  }
+  render() {
+    return (
+      <>
+        <header>
+          <Link to="/">
+            <Header />
+          </Link>
+        </header>
+        <main>
+          <Switch>
+            <Route
+              path="/"
+              exact
+              component={() => (
+                <Home
+                  leagueIds={this.state.leagueIds}
+                  leaguesInfo={this.state.leaguesInfo}
+                />
+              )}
+            />
+            <Route
+              path="/leagues/:league"
+              exact
+              render={routerProps => (
+                <League
+                  match={routerProps.match}
+                  leaguesInfo={this.state.leaguesInfo}
+                />
+              )}
+            />
+          </Switch>
+        </main>
+      </>
+    );
+  }
 }
 
 export default App;
