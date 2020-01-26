@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import TeamList from './TeamList.js';
 
 class League extends Component {
@@ -16,7 +15,6 @@ class League extends Component {
         league => league.idLeague === this.props.match.params.league
       )[0]
     });
-    let teams = [];
     fetch(
       `https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=${this.props.match.params.league}`
     )
@@ -33,7 +31,7 @@ class League extends Component {
           <div className="league-name">{this.state.leagueInfo.strLeague}</div>
         </div>
         <section className="league-summary">
-          <div className="league-summary-title">
+          <div className="league-summary-title section-title">
             {this.state.leagueInfo.strLeague}
           </div>
           <div className="league-description">

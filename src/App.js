@@ -3,6 +3,8 @@ import './App.css';
 import Header from './Header.js';
 import Home from './Home.js';
 import League from './League.js';
+import Team from './Team.js';
+import Player from './Player.js';
 import { Link, Switch, Route } from 'react-router-dom';
 
 class App extends Component {
@@ -55,6 +57,16 @@ class App extends Component {
                   leaguesInfo={this.state.leaguesInfo}
                 />
               )}
+            />
+            <Route
+              path="/teams/:team"
+              exact
+              render={routerProps => <Team match={routerProps.match} />}
+            />
+            <Route
+              path="/players/:player"
+              exact
+              render={routerProps => <Player match={routerProps.match} />}
             />
           </Switch>
         </main>

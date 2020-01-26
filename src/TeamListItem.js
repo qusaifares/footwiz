@@ -1,16 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function TeamListItem(props) {
   console.log(props.team);
   return (
-    <div className="team">
+    <Link to={`/teams/${props.team.idTeam}`} className="team-list-item">
       <img
         src={props.team.strTeamBadge}
         alt={props.team.strTeam}
         className="team-badge"
       />
-      <div className="team-name">{props.team.strTeam}</div>
-    </div>
+      <div className="team-list-name">{props.team.strTeam}</div>
+    </Link>
   );
 }
 
