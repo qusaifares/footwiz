@@ -6,7 +6,11 @@ function SquadPlayer(props) {
   return (
     <Link to={`/players/${props.player.idPlayer}`} className="squad-player">
       <img
-        src={props.player.strCutout || props.player.strThumb}
+        src={
+          props.player.strCutout ||
+          props.player.strThumb ||
+          props.player.strRender
+        }
         alt={props.player.strPlayer}
       />
       <div className="squad-player-name">{props.player.strPlayer}</div>
