@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import TeamList from './TeamList.js';
 
 class League extends Component {
   constructor(props) {
@@ -21,11 +22,10 @@ class League extends Component {
     )
       .then(res => res.json())
       .then(data => {
-        console.log(data);
+        this.setState({ teams: data.teams });
       });
   }
   render() {
-    console.log(this.state.leagueInfo);
     return (
       <>
         <div className="league-landing">
@@ -40,9 +40,7 @@ class League extends Component {
             {this.state.leagueInfo.strDescriptionEN}
           </div>
         </section>
-        <section className="teams">
-          <div className="league-summary-title">Teams</div>
-        </section>
+        <TeamList teams={this.state.teams} />
       </>
     );
   }
