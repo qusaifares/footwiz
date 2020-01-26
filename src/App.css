@@ -224,7 +224,7 @@ h2 {
   background: rgba(28, 202, 216, 0.5);
   margin-left: -30px;
   position: absolute;
-  top: 35%;
+  top: 25%;
   color: var(--light-shadow);
   font-weight: bold;
   display: flex;
@@ -298,11 +298,19 @@ h2 {
   color: var(--main);
 }
 
+.player-description {
+  font-size: 22px;
+  color: var(--light-shadow);
+  padding: 30px;
+  margin-top: 200px;
+}
+
 @media (max-width: 1095px) {
   .player-banner {
     height: 700px;
     flex-direction: column;
     align-items: center;
+    top: 7%;
   }
   .banner-left {
     width: 100%;

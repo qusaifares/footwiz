@@ -72,6 +72,9 @@ export class Player extends Component {
             </ul>
           </div>
         </div>
+        <div className="player-description">
+          {this.state.player.strDescriptionEN}
+        </div>
       </div>
     );
   }
