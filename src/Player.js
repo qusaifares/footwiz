@@ -4,16 +4,33 @@ export class Player extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      player: {}
+      player: {},
+      position: ''
     };
   }
   componentDidMount() {
     fetch(
-      `https://www.thesportsdb.com/api/v1/json/1/lookupplayer.php?id=${this.props.match.params.player}`
+      `https://www.thesportsdb.com/api/v1/json/${process.env.REACT_APP_SOCCER_API_KEY}/lookupplayer.php?id=${this.props.match.params.player}`
     )
       .then(res => res.json())
       .then(data => {
-        this.setState({ player: data.players[0] });
+        const player = data.players[0];
+        this.setState({ player: player });
+        if (player.strPosition.toLowerCase().includes('goal')) {
+          this.setState({ position: 'Goalkeeper' });
+        } else if (
+          player.strPosition.toLowerCase().includes('back') ||
+          player.strPosition.toLowerCase().includes('defen')
+        ) {
+          this.setState({ position: 'Defender' });
+        } else if (player.strPosition.toLowerCase().includes('midfield')) {
+          this.setState({ position: 'Midfielder' });
+        } else if (
+          player.strPosition.toLowerCase().includes('forward') ||
+          player.strPosition.toLowerCase().includes('wing')
+        ) {
+          this.setState({ position: 'Forward' });
+        }
       });
   }
   render() {
@@ -24,7 +41,7 @@ export class Player extends Component {
           <div className="player-banner">
             <div className="banner-left">
               <div className="profile">
-                <div className="position">{this.state.player.strPosition}</div>
+                <div className="position">{this.state.position}</div>
                 <div className="profile-name">
                   {this.state.player.strPlayer}
                 </div>
@@ -61,7 +78,7 @@ export class Player extends Component {
                 <span>Birthplace:</span> {this.state.player.strBirthLocation}
               </li>
               <li>
-                <span>Position:</span> {this.state.player.strPosition}
+                <span>Position:</span> {this.state.position}
               </li>
               <li>
                 <span>Height:</span> {this.state.player.strHeight}
