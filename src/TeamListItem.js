@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function TeamListItem(props) {
-  console.log(props.team);
   return (
     <Link to={`/teams/${props.team.idTeam}`} className="team-list-item">
       <img

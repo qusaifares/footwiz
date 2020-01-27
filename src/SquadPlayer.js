@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function SquadPlayer(props) {
-  console.log(props.player);
   return (
     <Link to={`/players/${props.player.idPlayer}`} className="squad-player">
       <img

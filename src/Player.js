@@ -34,7 +34,6 @@ export class Player extends Component {
       });
   }
   render() {
-    console.log(this.state.player);
     return (
       <div className="player">
         <div className="player-landing">

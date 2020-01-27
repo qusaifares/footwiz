@@ -10,11 +10,13 @@ class League extends Component {
     };
   }
   componentDidMount() {
-    this.setState({
-      leagueInfo: this.props.leaguesInfo.filter(
-        league => league.idLeague === this.props.match.params.league
-      )[0]
-    });
+    fetch(
+      `https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=${this.props.match.params.league}`
+    )
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ leagueInfo: data.leagues[0] });
+      });
     fetch(
       `https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=${this.props.match.params.league}`
     )

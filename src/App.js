@@ -51,12 +51,7 @@ class App extends Component {
             <Route
               path="/leagues/:league"
               exact
-              render={routerProps => (
-                <League
-                  match={routerProps.match}
-                  leaguesInfo={this.state.leaguesInfo}
-                />
-              )}
+              render={routerProps => <League match={routerProps.match} />}
             />
             <Route
               path="/teams/:team"
