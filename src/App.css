@@ -268,12 +268,12 @@ h2 {
 
 .player-details {
   display: flex;
-  flex-flow: row wrap;
 }
 
 .player-details img,
 .personal {
   width: 50%;
+  min-width: 372px;
 }
 
 .personal-title {
@@ -305,7 +305,7 @@ h2 {
   margin-top: 200px;
 }
 
-@media (max-width: 1095px) {
+@media (max-width: 700px) {
   .player-banner {
     height: 700px;
     flex-direction: column;
@@ -336,5 +336,10 @@ h2 {
   .number {
     font-size: 150px;
     margin-left: 20px;
+  }
+
+  .player-details {
+    flex-direction: column-reverse;
+    justify-content: space-around;
   }
 }
