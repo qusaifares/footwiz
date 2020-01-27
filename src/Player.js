@@ -20,7 +20,7 @@ export class Player extends Component {
           this.setState({ position: 'Goalkeeper' });
         } else if (
           player.strPosition.toLowerCase().includes('back') ||
-          player.strPosition.toLowerCase().includes('defen')
+          player.strPosition.toLowerCase().includes('defender')
         ) {
           this.setState({ position: 'Defender' });
         } else if (player.strPosition.toLowerCase().includes('midfield')) {

@@ -26,7 +26,7 @@ export class Squad extends Component {
             defenders: this.state.squad.filter(
               player =>
                 player.strPosition.toLowerCase().includes('back') ||
-                player.strPosition.toLowerCase().includes('defen')
+                player.strPosition.toLowerCase().includes('defender')
             ),
             midfielders: this.state.squad.filter(player =>
               player.strPosition.toLowerCase().includes('midfield')
