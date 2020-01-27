@@ -16,7 +16,7 @@ class League extends Component {
       )[0]
     });
     fetch(
-      `https://www.thesportsdb.com/api/v1/json/${process.env.REACT_APP_SOCCER_API_KEY}/lookup_all_teams.php?id=${this.props.match.params.league}`
+      `https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=${this.props.match.params.league}`
     )
       .then(res => res.json())
       .then(data => {

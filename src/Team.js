@@ -10,7 +10,7 @@ class Team extends Component {
   }
   componentDidMount() {
     fetch(
-      `https://www.thesportsdb.com/api/v1/json/${process.env.REACT_APP_SOCCER_API_KEY}/lookupteam.php?id=${this.props.match.params.team}`
+      `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${this.props.match.params.team}`
     )
       .then(res => res.json())
       .then(data => {

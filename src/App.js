@@ -18,7 +18,7 @@ class App extends Component {
   componentDidMount() {
     this.state.leagueIds.forEach(id => {
       fetch(
-        `https://www.thesportsdb.com/api/v1/json/${process.env.REACT_APP_SOCCER_API_KEY}/lookupleague.php?id=${id}`
+        `https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=${id}`
       )
         .then(res => res.json())
         .then(data =>

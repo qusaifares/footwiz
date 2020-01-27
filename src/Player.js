@@ -10,7 +10,7 @@ export class Player extends Component {
   }
   componentDidMount() {
     fetch(
-      `https://www.thesportsdb.com/api/v1/json/${process.env.REACT_APP_SOCCER_API_KEY}/lookupplayer.php?id=${this.props.match.params.player}`
+      `https://www.thesportsdb.com/api/v1/json/1/lookupplayer.php?id=${this.props.match.params.player}`
     )
       .then(res => res.json())
       .then(data => {

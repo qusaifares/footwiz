@@ -2,6 +2,7 @@ import React from 'react';
 import LeagueListItem from './LeagueListItem.js';
 
 function Home(props) {
+  console.log(props.leaguesInfo);
   return (
     <>
       <LeagueListItem />
