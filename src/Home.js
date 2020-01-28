@@ -3,15 +3,14 @@ import LeagueListItem from './LeagueListItem.js';
 
 function Home(props) {
   return (
-    <>
-      <LeagueListItem />
+    <div className="home">
       <h2>Select a league</h2>
       <div className="leagues">
         {props.leaguesInfo.map(league => (
           <LeagueListItem league={league} key={league.idLeague} />
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
