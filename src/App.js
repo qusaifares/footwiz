@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import ScrollToTop from './ScrollToTop.js';
 import Header from './Header.js';
 import Home from './Home.js';
 import League from './League.js';
@@ -37,6 +38,7 @@ class App extends Component {
           </Link>
         </header>
         <main>
+          <ScrollToTop />
           <Switch>
             <Route
               path="/"

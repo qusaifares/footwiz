@@ -200,15 +200,20 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  width: 200px;
-  height: 250px;
+  width: 250px;
+  height: 300px;
   margin: 15px;
   border-radius: 10px;
   transition: all 0.2s ease-in-out;
 }
 
-.squad-player img {
+.player-headshot {
   width: 90%;
+}
+
+.flag {
+  width: 30px;
+  margin-right: 10px;
 }
 
 .squad-title {
