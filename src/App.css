@@ -196,6 +196,7 @@ h2 {
   height: 250px;
   margin: 15px;
   border-radius: 10px;
+  transition: all 0.2s ease-in-out;
 }
 
 .squad-player img {
@@ -274,6 +275,7 @@ h2 {
 .personal {
   width: 50%;
   min-width: 372px;
+  margin: 10px;
 }
 
 .personal-title {

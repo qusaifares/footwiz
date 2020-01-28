@@ -8,7 +8,8 @@ function SquadPlayer(props) {
         src={
           props.player.strCutout ||
           props.player.strThumb ||
-          props.player.strRender
+          props.player.strRender ||
+          `${process.env.PUBLIC_URL}/images/headshot.png`
         }
         alt={props.player.strPlayer}
       />
