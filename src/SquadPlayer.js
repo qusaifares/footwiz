@@ -10,7 +10,6 @@ class SquadPlayer extends Component {
   }
   componentDidMount() {
     let nationality = this.props.player.strNationality.toLowerCase();
-    console.log(nationality);
     if (
       nationality === 'england' ||
       nationality === 'scotland' ||

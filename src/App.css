@@ -5,6 +5,8 @@
   --dark-bg: #323636;
   --dark-shadow: #555a5c;
   --action: #ea9239;
+  --success: #75e3b5;
+  --failure: #b83d43;
 }
 
 * {
@@ -158,6 +160,51 @@ h2 {
 
 .team-info {
   min-height: 100vh;
+}
+
+.results {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 50px 0 200px 0;
+}
+
+.result {
+  width: 250px;
+  height: 70px;
+  text-align: center;
+  border: 2px solid var(--main);
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.result:hover tbody {
+  background: var(--main);
+  color: var(--dark-bg);
+}
+
+.result thead {
+  background: var(--main);
+  color: var(--dark-bg);
+}
+
+.result tbody {
+  color: var(--light-shadow);
+  background: var(--dark-shadow);
+  transition: 0.3s all ease;
+}
+
+.highlights {
+  font-weight: bold;
+}
+
+.success {
+  background: var(--success);
+  color: var(--dark-bg);
+}
+
+.failure {
+  background: var(--failure);
 }
 
 .team-summary {

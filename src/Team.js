@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import Result from './Result.js';
 import Squad from './Squad.js';
 
 class Team extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      team: {}
+      team: {},
+      results: []
     };
   }
   componentDidMount() {
@@ -16,8 +18,16 @@ class Team extends Component {
       .then(data => {
         this.setState({ team: data.teams[0] });
       });
+    fetch(
+      `https://www.thesportsdb.com/api/v1/json/1/eventslast.php?id=${this.props.match.params.team}`
+    )
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ results: data.results });
+      });
   }
   render() {
+    console.log(this.state.results);
     return (
       <>
         <div className="team-landing">
@@ -27,6 +37,12 @@ class Team extends Component {
             className="team-badge"
           />
           <div className="team-name">{this.state.team.strTeam}</div>
+        </div>
+        <div className="section-title">Last 5 Matches</div>
+        <div className="results">
+          {this.state.results.map(event => (
+            <Result event={event} key={event.idEvent} />
+          ))}
         </div>
         <div className="team-info">
           <div className="team-summary-title section-title">
