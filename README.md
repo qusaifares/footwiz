@@ -1,12 +1,8 @@
-# Trump Card Trivia
-
-![Game](img/game.png)
-
-[Here's a link to the game](https://qusaifares.github.io/trivia/)
+# Football Wiz
 
 ## Introduction
 
-Football Wiz is a website containing information on the top 5 leagues, their teams and players.
+As someone who loves following professional football (soccer) but is always on a tight schedule, I wanted to create a place for football fans to be able to keep up without having to spend 90 minutes watching each match. iFootball Wiz is a website containing information on the top 5 leagues including all their teams and players.
 
 ## User Stories
 
@@ -19,6 +15,10 @@ Football Wiz is a website containing information on the top 5 leagues, their tea
 - **As a Fooball Wiz user**, I want to find information on a specific player, team or league quickly and easily.
 
 - **As a Fooball Wiz user**, I want to get live soccer scores when I can't watch the game.
+
+## Demo
+
+![Demo](demo.gif)
 
 ## Planning
 
