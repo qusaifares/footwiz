@@ -8,6 +8,9 @@ function LeagueTableRow(props) {
       <td>{props.data.win}</td>
       <td>{props.data.draw}</td>
       <td>{props.data.loss}</td>
+      <td>{props.data.goalsfor}</td>
+      <td>{props.data.goalsagainst}</td>
+      <td>{props.data.goalsdifference}</td>
       <td className="points">{props.data.total}</td>
     </tr>
   );

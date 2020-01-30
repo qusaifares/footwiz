@@ -29,6 +29,9 @@ class LeagueTable extends Component {
               <th>Win</th>
               <th>Draw</th>
               <th>Loss</th>
+              <th>GF</th>
+              <th>GA</th>
+              <th>GD</th>
               <th>Points</th>
             </tr>
           </thead>
