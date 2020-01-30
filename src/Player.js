@@ -34,62 +34,71 @@ export class Player extends Component {
       });
   }
   render() {
+    console.log(this.state.player);
+    let thumb = this.state.player.strThumb;
     return (
-      <div className="player">
-        <div className="player-landing">
-          <div className="player-banner">
-            <div className="banner-left">
-              <div className="profile">
-                <div className="position">{this.state.position}</div>
-                <div className="profile-name">
-                  {this.state.player.strPlayer}
+      <div
+        className="player-background"
+        style={{ backgroundImage: 'url(' + thumb + ')' }}
+      >
+        <div className="player">
+          <div className="player-landing">
+            <div className="player-banner">
+              <div className="banner-left">
+                <div className="profile">
+                  <div className="position">{this.state.position}</div>
+                  <div className="profile-name">
+                    {this.state.player.strPlayer}
+                  </div>
                 </div>
+                <div className="number">{this.state.player.strNumber}</div>
               </div>
-              <div className="number">{this.state.player.strNumber}</div>
-            </div>
-            <div className="banner-right">
-              <img
-                src={this.state.player.strCutout || this.state.player.strRender}
-                alt={this.state.player.strPlayer}
-              />
+              <div className="banner-right">
+                <img
+                  src={
+                    this.state.player.strCutout || this.state.player.strRender
+                  }
+                  alt={this.state.player.strPlayer}
+                />
+              </div>
             </div>
           </div>
-        </div>
-        <div className="player-details">
-          <img
-            src={
-              this.state.player.strRender ||
-              this.state.player.strThumb ||
-              this.state.player.strCutout
-            }
-            alt={this.state.player.strPlayer}
-          />
-          <div className="personal">
-            <div className="personal-title">Personal Details</div>
-            <ul className="personal-details">
-              <li>
-                <span>Name:</span> {this.state.player.strPlayer}
-              </li>
-              <li>
-                <span>Date of Birth:</span> {this.state.player.dateBorn}
-              </li>
-              <li>
-                <span>Birthplace:</span> {this.state.player.strBirthLocation}
-              </li>
-              <li>
-                <span>Position:</span> {this.state.position}
-              </li>
-              <li>
-                <span>Height:</span> {this.state.player.strHeight}
-              </li>
-              <li>
-                <span>Weight:</span> {this.state.player.strWeight}
-              </li>
-            </ul>
+          <div className="player-details">
+            <img
+              src={
+                this.state.player.strRender ||
+                this.state.player.strThumb ||
+                this.state.player.strCutout
+              }
+              alt={this.state.player.strPlayer}
+            />
+            <div className="personal">
+              <div className="personal-title">Personal Details</div>
+              <ul className="personal-details">
+                <li>
+                  <span>Name:</span> {this.state.player.strPlayer}
+                </li>
+                <li>
+                  <span>Date of Birth:</span> {this.state.player.dateBorn}
+                </li>
+                <li>
+                  <span>Birthplace:</span> {this.state.player.strBirthLocation}
+                </li>
+                <li>
+                  <span>Position:</span> {this.state.position}
+                </li>
+                <li>
+                  <span>Height:</span> {this.state.player.strHeight}
+                </li>
+                <li>
+                  <span>Weight:</span> {this.state.player.strWeight}
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div className="player-description">
-          {this.state.player.strDescriptionEN}
+          <div className="player-description">
+            {this.state.player.strDescriptionEN}
+          </div>
         </div>
       </div>
     );

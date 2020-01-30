@@ -21,7 +21,9 @@ a {
 }
 
 body {
-  background: var(--dark-bg);
+  background: url(/images/background.jpg);
+  background-size: 100vw;
+  background-attachment: fixed;
   line-height: 1.5;
 }
 
@@ -42,6 +44,7 @@ header {
 main {
   margin-top: 80px;
   padding: 30px;
+  background: rgba(50, 54, 54, 0.6);
 }
 
 .home {
@@ -49,7 +52,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  min-height: 80vh;
+  min-height: calc(100vh - 140px);
 }
 
 h2 {
@@ -106,7 +109,7 @@ h2 {
 }
 
 .league-summary {
-  min-height: 100vh;
+  min-height: 80vh;
 }
 
 .section-title {
@@ -120,6 +123,38 @@ h2 {
   color: var(--light-shadow);
   font-size: 22px;
   margin-top: 30px;
+}
+
+.league-table {
+  text-align: center;
+  border: 2px solid var(--main);
+  border-radius: 10px;
+  font-size: 1.5rem;
+  margin: 30px 0 100px 0;
+}
+
+.league-table thead {
+  background: var(--main);
+  color: var(--dark-bg);
+}
+
+.league-table tbody {
+  color: var(--light-shadow);
+  background: var(--dark-shadow);
+  transition: 0.3s all ease;
+}
+
+.league-table td {
+  height: 50px;
+  width: 120px;
+}
+
+.team-column {
+  width: 200px;
+}
+
+.points {
+  font-weight: bold;
 }
 
 .team-list {
@@ -176,6 +211,7 @@ h2 {
   border: 2px solid var(--main);
   margin: 5px;
   border-radius: 10px;
+  font-size: 1.2rem;
 }
 
 .result:hover tbody {
@@ -192,6 +228,10 @@ h2 {
   color: var(--light-shadow);
   background: var(--dark-shadow);
   transition: 0.3s all ease;
+}
+
+.result td {
+  height: 35px;
 }
 
 .highlights {
@@ -254,6 +294,16 @@ h2 {
   transition: all 0.2s ease-in-out;
 }
 
+.player-background {
+  background-size: cover;
+  background-attachment: fixed;
+  margin: -30px;
+}
+
+.player {
+  background: rgba(50, 54, 54, 0.7);
+}
+
 .player-headshot {
   width: 90%;
 }
@@ -281,9 +331,8 @@ h2 {
 
 .player-banner {
   height: 350px;
-  width: calc(100% + 60px);
+  width: 100%;
   background: rgba(28, 202, 216, 0.5);
-  margin-left: -30px;
   position: absolute;
   top: 25%;
   color: var(--light-shadow);
@@ -373,6 +422,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     top: 7%;
+    font-family: 'Oswald', sans-serif;
   }
   .banner-left {
     width: 100%;

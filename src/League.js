@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TeamList from './TeamList.js';
+import LeagueTable from './LeagueTable.js';
 
 class League extends Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class League extends Component {
   }
   render() {
     return (
-      <>
+      <div className="league">
         <div className="league-landing">
           <img src={this.state.leagueInfo.strBadge} alt="" className="badge" />
           <div className="league-name">{this.state.leagueInfo.strLeague}</div>
@@ -40,8 +41,9 @@ class League extends Component {
             {this.state.leagueInfo.strDescriptionEN}
           </div>
         </section>
+        <LeagueTable leagueId={this.props.match.params.league} />
         <TeamList teams={this.state.teams} />
-      </>
+      </div>
     );
   }
 }

@@ -29,7 +29,7 @@ class Team extends Component {
   render() {
     console.log(this.state.results);
     return (
-      <>
+      <div className="team">
         <div className="team-landing">
           <img
             src={this.state.team.strTeamBadge}
@@ -75,7 +75,7 @@ class Team extends Component {
           </div>
         </div>
         <Squad teamId={this.props.match.params.team} />
-      </>
+      </div>
     );
   }
 }
