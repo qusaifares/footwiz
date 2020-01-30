@@ -25,6 +25,7 @@ body {
   background-size: 100vw;
   background-attachment: fixed;
   line-height: 1.5;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* Header */
@@ -350,6 +351,7 @@ h2 {
 .banner-left {
   display: flex;
   align-items: center;
+  font-family: 'Oswald', sans-serif;
 }
 
 .position {

@@ -27,7 +27,6 @@ class Team extends Component {
       });
   }
   render() {
-    console.log(this.state.results);
     return (
       <div className="team">
         <div className="team-landing">

@@ -34,7 +34,6 @@ export class Player extends Component {
       });
   }
   render() {
-    console.log(this.state.player);
     let thumb = this.state.player.strThumb;
     return (
       <div
