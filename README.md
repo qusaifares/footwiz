@@ -55,6 +55,7 @@ This application is currently in _Gold_ MVP status and has the following feature
 
 ## Technologies Used
 
+- JavaScript
 - React
 - HTML5
 - CSS3
