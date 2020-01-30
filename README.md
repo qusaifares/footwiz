@@ -22,7 +22,7 @@ As someone who loves following professional football (soccer) but is always on a
 
 ## Planning
 
-I created a [this interactive prototype](https://xd.adobe.com/view/5a23a9b8-eaa4-4c1d-6c93-454e15058916-2c12/?fullscreen) using Adobe XD which helped me visualize my final product and in turn allowed the development of this application to go smoothly.
+I created [this interactive prototype](https://xd.adobe.com/view/5a23a9b8-eaa4-4c1d-6c93-454e15058916-2c12/?fullscreen) using Adobe XD which helped me visualize my final product and in turn allowed the development of this application to go smoothly.
 
 ## Data
 
