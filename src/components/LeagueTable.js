@@ -37,7 +37,7 @@ class LeagueTable extends Component {
           </thead>
           <tbody>
             {this.state.currentTable.map(row => (
-              <LeagueTableRow data={row} />
+              <LeagueTableRow data={row} key={row.name} />
             ))}
           </tbody>
         </table>

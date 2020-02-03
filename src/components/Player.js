@@ -5,7 +5,10 @@ export class Player extends Component {
     super(props);
     this.state = {
       player: {},
-      position: ''
+      position: '',
+      entities: {
+        '&#039;': "'"
+      }
     };
   }
   componentDidMount() {
@@ -15,7 +18,14 @@ export class Player extends Component {
       .then(res => res.json())
       .then(data => {
         const player = data.players[0];
-        this.setState({ player: player });
+        this.setState({ player: player }, () => {
+          let footballer = this.state.player;
+          footballer.strPlayer = footballer.strPlayer.replace(
+            /&#?\w+;/,
+            match => this.state.entities[match]
+          );
+          this.setState({ player: footballer });
+        });
         if (player.strPosition.toLowerCase().includes('goal')) {
           this.setState({ position: 'Goalkeeper' });
         } else if (
@@ -35,6 +45,7 @@ export class Player extends Component {
   }
   render() {
     let thumb = this.state.player.strThumb;
+    console.log(this.state.player);
     return (
       <div
         className="player-background"

@@ -5,10 +5,20 @@ class SquadPlayer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      flag: ''
+      flag: '',
+      player: {},
+      entities: {
+        '&#039;': "'"
+      }
     };
   }
   componentDidMount() {
+    let player = this.props.player;
+    player.strPlayer = player.strPlayer.replace(
+      /&#?\w+;/,
+      match => this.state.entities[match]
+    );
+    this.setState({ player: player });
     let nationality = this.props.player.strNationality.toLowerCase();
     if (
       nationality === 'england' ||
@@ -31,26 +41,26 @@ class SquadPlayer extends Component {
   render() {
     return (
       <Link
-        to={`/players/${this.props.player.idPlayer}`}
+        to={`/players/${this.state.player.idPlayer}`}
         className="squad-player"
       >
         <img
           src={
-            `${this.props.player.strCutout ||
-              this.props.player.strThumb ||
-              this.props.player.strRender}/preview` ||
+            `${this.state.player.strCutout ||
+              this.state.player.strThumb ||
+              this.state.player.strRender}/preview` ||
             `${process.env.PUBLIC_URL}/images/headshot.png`
           }
-          alt={this.props.player.strPlayer}
+          alt={this.state.player.strPlayer}
           className="player-headshot"
         />
         <div className="squad-player-name">
           <img
             src={this.state.flag}
-            alt={this.props.player.strNationality}
+            alt={this.state.player.strNationality}
             className="flag"
           />
-          {this.props.player.strPlayer}
+          {this.state.player.strPlayer}
         </div>
       </Link>
     );
