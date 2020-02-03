@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import ScrollToTop from './ScrollToTop.js';
-import Header from './Header.js';
-import Home from './Home.js';
-import League from './League.js';
-import Team from './Team.js';
-import Player from './Player.js';
+import ScrollToTop from './components/ScrollToTop.js';
+import Header from './components/Header.js';
+import Home from './components/Home.js';
+import League from './components/League.js';
+import Team from './components/Team.js';
+import Player from './components/Player.js';
 import { Link, Switch, Route } from 'react-router-dom';
 
 class App extends Component {
