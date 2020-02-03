@@ -47,9 +47,9 @@ This application is currently in _Gold_ MVP status and has the following feature
 - **Gold:**
   - [x] Show each leagues current standings
   - [x] Show details of each team's last 5 matches
+  - [x] Mobile responsive design
   - [ ] Personal player stats
   - [ ] Premium styling and animations
-  - [ ] Mobile responsive design
 - **Platinum:**
   - [ ] Ability to compare two or more players' stats
 
