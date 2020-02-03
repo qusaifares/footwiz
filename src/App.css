@@ -2,7 +2,7 @@
   --main: #1ccad8;
   --light-bg: #f0f0f2;
   --light-shadow: #dee4e4;
-  --dark-bg: #323636;
+  --dark-bg: #242626;
   --dark-shadow: #64696c;
   --action: #ea9239;
   --success: #75e3b5;
@@ -31,8 +31,8 @@ body {
 /* Header */
 
 header {
-  background-color: var(--main);
-  color: var(--dark-bg);
+  background-color: var(--dark-bg);
+  color: var(--light-shadow);
   text-align: center;
   height: 80px;
   line-height: 80px;
@@ -40,6 +40,10 @@ header {
   top: 0;
   width: 100%;
   z-index: 1;
+}
+
+header span {
+  color: var(--main);
 }
 
 main {
