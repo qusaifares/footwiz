@@ -36,9 +36,9 @@ class SquadPlayer extends Component {
       >
         <img
           src={
-            this.props.player.strCutout ||
-            this.props.player.strThumb ||
-            this.props.player.strRender ||
+            `${this.props.player.strCutout ||
+              this.props.player.strThumb ||
+              this.props.player.strRender}/preview` ||
             `${process.env.PUBLIC_URL}/images/headshot.png`
           }
           alt={this.props.player.strPlayer}
