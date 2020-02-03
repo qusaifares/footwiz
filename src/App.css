@@ -3,7 +3,8 @@
   --light-bg: #f0f0f2;
   --light-shadow: #dee4e4;
   --dark-bg: #242626;
-  --dark-shadow: #64696c;
+  --dark-active: #353939;
+  --dark-shadow: #5f6467;
   --action: #ea9239;
   --success: #75e3b5;
   --failure: #b83d43;
@@ -86,6 +87,7 @@ h2 {
 .team-list-item:hover,
 .squad-player:hover {
   filter: drop-shadow(2px 2px 30px #fff);
+  background: var(--dark-active);
 }
 
 .hi {
@@ -125,10 +127,14 @@ h2 {
 }
 
 .league-description,
-.team-description {
+.team-description,
+.player-description {
   color: var(--light-shadow);
   font-size: 22px;
-  margin-top: 30px;
+  border: 2px solid var(--dark-shadow);
+  max-width: 90%;
+  margin: 30px auto;
+  padding: 30px;
 }
 
 .league-table {
@@ -140,9 +146,23 @@ h2 {
   overflow: scroll;
 }
 
+.league-table a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--light-shadow);
+  transition: all 0.3s;
+  margin: 0 auto;
+}
+
+.league-table a:hover::after {
+  width: 70%;
+}
+
 .league-table thead {
-  background: var(--main);
-  color: var(--dark-bg);
+  color: var(--main);
+  background: var(--dark-bg);
 }
 
 .league-table tbody {
@@ -207,7 +227,7 @@ h2 {
 .results {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
   margin: 50px 0 200px 0;
 }
 
@@ -216,7 +236,7 @@ h2 {
   height: 70px;
   text-align: center;
   border: 2px solid var(--main);
-  margin: 5px;
+  margin: 20px;
   border-radius: 10px;
   font-size: 1.2rem;
 }
@@ -227,8 +247,8 @@ h2 {
 }
 
 .result thead {
-  background: var(--main);
-  color: var(--dark-bg);
+  color: var(--light-shadow);
+  background: var(--dark-bg);
 }
 
 .result tbody {
@@ -339,7 +359,7 @@ h2 {
 .player-banner {
   height: 350px;
   width: 100%;
-  background: rgba(28, 202, 216, 0.5);
+  background: rgba(11, 141, 150, 0.5);
   position: absolute;
   top: 25%;
   color: var(--light-shadow);
@@ -418,7 +438,6 @@ h2 {
 }
 
 .player-description {
-  font-size: 22px;
   color: var(--light-shadow);
   padding: 30px;
   margin-top: 200px;
@@ -455,6 +474,10 @@ h2 {
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 25px;
   }
+  .results {
+    align-items: center;
+    flex-flow: column;
+  }
   .result {
     margin: 20px 0;
   }
@@ -466,11 +489,16 @@ h2 {
     max-width: 100%;
     margin: 50px 0;
   }
+  .team-description,
+  .league-description,
+  .player-description {
+    font-size: 16px;
+  }
   .squad-player {
     margin: 30px auto;
   }
   .player-banner {
-    height: 700px;
+    height: 600px;
     flex-direction: column;
     align-items: center;
     top: 5%;
@@ -482,12 +510,12 @@ h2 {
     max-width: 100%;
   }
   .banner-left {
-    max-height: 60%;
+    max-height: 45%;
     align-items: center;
     justify-content: space-between;
   }
   .banner-right {
-    max-height: 40%;
+    max-height: 55%;
     display: flex;
     align-items: flex-start;
   }
@@ -495,7 +523,10 @@ h2 {
   .player-banner img {
     height: 350px;
   }
-
+  .player-details * {
+    margin-left: auto;
+    margin-right: auto;
+  }
   .profile-name {
     font-size: 42px;
   }

@@ -1,9 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function LeagueTableRow(props) {
   return (
     <tr>
-      <td className="team-column">{props.data.name}</td>
+      <td className="team-column">
+        <Link to={`/teams/${props.data.teamid}`}>{props.data.name}</Link>
+      </td>
       <td>{props.data.played}</td>
       <td>{props.data.win}</td>
       <td>{props.data.draw}</td>
