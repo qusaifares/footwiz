@@ -83,6 +83,12 @@ h2 {
   transition: all 0.2s ease-in-out;
 }
 
+.league-logo,
+.team-list-item,
+.squad-player {
+  cursor: pointer;
+}
+
 .league-logo:hover,
 .team-list-item:hover,
 .squad-player:hover {
