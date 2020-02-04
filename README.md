@@ -18,7 +18,7 @@ As someone who loves following professional football (soccer) but is always on a
 
 ## Demo
 
-![Quick Demo](demo.gif)
+![Quick Demo](demo-clip.gif)
 
 ## Planning
 
