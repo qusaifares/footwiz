@@ -333,6 +333,7 @@ h2 {
 
 .player {
   background: rgba(50, 54, 54, 0.7);
+  padding-bottom: 30px;
 }
 
 .player-headshot {
