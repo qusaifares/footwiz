@@ -508,6 +508,10 @@ h2 {
   .squad-player {
     margin: 30px auto;
   }
+
+  .player-background {
+    background-position-x: 50%;
+  }
   .player-banner {
     height: 600px;
     flex-direction: column;
