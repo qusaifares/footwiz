@@ -510,6 +510,7 @@ h2 {
   }
 
   .player-background {
+    background-size: unset;
     background-position-x: 50%;
   }
   .player-banner {
