@@ -19,7 +19,7 @@ class LeagueTable extends Component {
       .catch((err) => console.log(err));
   }
   render() {
-    if (!currentTable.length) return null;
+    if (!this.state.currentTable.length) return null;
 
     return (
       <>
