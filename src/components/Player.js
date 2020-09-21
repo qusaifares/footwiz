@@ -15,14 +15,14 @@ export class Player extends Component {
     fetch(
       `https://www.thesportsdb.com/api/v1/json/1/lookupplayer.php?id=${this.props.match.params.player}`
     )
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         const player = data.players[0];
         this.setState({ player: player }, () => {
           let footballer = this.state.player;
           footballer.strPlayer = footballer.strPlayer.replace(
             /&#?\w+;/,
-            match => this.state.entities[match]
+            (match) => this.state.entities[match]
           );
           this.setState({ player: footballer });
         });
@@ -41,29 +41,30 @@ export class Player extends Component {
         ) {
           this.setState({ position: 'Forward' });
         }
-      });
+      })
+      .catch((err) => console.log(err));
   }
   render() {
     let thumb = this.state.player.strThumb;
     console.log(this.state.player);
     return (
       <div
-        className="player-background"
+        className='player-background'
         style={{ backgroundImage: 'url(' + thumb + ')' }}
       >
-        <div className="player">
-          <div className="player-landing">
-            <div className="player-banner">
-              <div className="banner-left">
-                <div className="profile">
-                  <div className="position">{this.state.position}</div>
-                  <div className="profile-name">
+        <div className='player'>
+          <div className='player-landing'>
+            <div className='player-banner'>
+              <div className='banner-left'>
+                <div className='profile'>
+                  <div className='position'>{this.state.position}</div>
+                  <div className='profile-name'>
                     {this.state.player.strPlayer}
                   </div>
                 </div>
-                <div className="number">{this.state.player.strNumber}</div>
+                <div className='number'>{this.state.player.strNumber}</div>
               </div>
-              <div className="banner-right">
+              <div className='banner-right'>
                 <img
                   src={
                     this.state.player.strCutout || this.state.player.strRender
@@ -73,7 +74,7 @@ export class Player extends Component {
               </div>
             </div>
           </div>
-          <div className="player-details">
+          <div className='player-details'>
             <img
               src={
                 this.state.player.strRender ||
@@ -82,9 +83,9 @@ export class Player extends Component {
               }
               alt={this.state.player.strPlayer}
             />
-            <div className="personal">
-              <div className="personal-title">Personal Details</div>
-              <ul className="personal-details">
+            <div className='personal'>
+              <div className='personal-title'>Personal Details</div>
+              <ul className='personal-details'>
                 <li>
                   <span>Name:</span> {this.state.player.strPlayer}
                 </li>
@@ -106,7 +107,7 @@ export class Player extends Component {
               </ul>
             </div>
           </div>
-          <div className="player-description">
+          <div className='player-description'>
             {this.state.player.strDescriptionEN}
           </div>
         </div>

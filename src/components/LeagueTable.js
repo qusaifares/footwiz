@@ -12,31 +12,34 @@ class LeagueTable extends Component {
     fetch(
       `https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=${this.props.leagueId}&s=1920`
     )
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         this.setState({ currentTable: data.table });
-      });
+      })
+      .catch((err) => console.log(err));
   }
   render() {
+    if (!currentTable.length) return null;
+
     return (
       <>
-        <div className="section-title">Current Table</div>
-        <table className="league-table">
+        <div className='section-title'>Current Table</div>
+        <table className='league-table'>
           <thead>
             <tr>
-              <th className="team-column">Team</th>
+              <th className='team-column'>Team</th>
               <th>Played</th>
               <th>Win</th>
               <th>Draw</th>
               <th>Loss</th>
-              <th className="mobile-hidden">GF</th>
-              <th className="mobile-hidden">GA</th>
-              <th className="mobile-hidden">GD</th>
+              <th className='mobile-hidden'>GF</th>
+              <th className='mobile-hidden'>GA</th>
+              <th className='mobile-hidden'>GD</th>
               <th>Points</th>
             </tr>
           </thead>
           <tbody>
-            {this.state.currentTable.map(row => (
+            {this.state.currentTable.map((row) => (
               <LeagueTableRow data={row} key={row.name} />
             ))}
           </tbody>

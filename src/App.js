@@ -17,23 +17,24 @@ class App extends Component {
     };
   }
   componentDidMount() {
-    this.state.leagueIds.forEach(id => {
+    this.state.leagueIds.forEach((id) => {
       fetch(
         `https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=${id}`
       )
-        .then(res => res.json())
-        .then(data =>
+        .then((res) => res.json())
+        .then((data) =>
           this.setState({
             leaguesInfo: [...this.state.leaguesInfo, data.leagues[0]]
           })
-        );
+        )
+        .catch((err) => console.log(err));
     });
   }
   render() {
     return (
       <>
         <header>
-          <Link to="/">
+          <Link to='/'>
             <Header />
           </Link>
         </header>
@@ -41,7 +42,7 @@ class App extends Component {
           <ScrollToTop />
           <Switch>
             <Route
-              path="/"
+              path='/'
               exact
               component={() => (
                 <Home
@@ -51,19 +52,19 @@ class App extends Component {
               )}
             />
             <Route
-              path="/leagues/:league"
+              path='/leagues/:league'
               exact
-              render={routerProps => <League match={routerProps.match} />}
+              render={(routerProps) => <League match={routerProps.match} />}
             />
             <Route
-              path="/teams/:team"
+              path='/teams/:team'
               exact
-              render={routerProps => <Team match={routerProps.match} />}
+              render={(routerProps) => <Team match={routerProps.match} />}
             />
             <Route
-              path="/players/:player"
+              path='/players/:player'
               exact
-              render={routerProps => <Player match={routerProps.match} />}
+              render={(routerProps) => <Player match={routerProps.match} />}
             />
           </Switch>
         </main>
